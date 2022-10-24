@@ -12,6 +12,8 @@ env:
   APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
   APPLE_PROVISION_PROFILE: ${{ secrets.APPLE_PROVISION_PROFILE }}
   KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+  APP_SPECIFIC_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
+  APP_EMAIL: ${{ secrets.APP_EMAIL }}
 
 jobs:
 #  gdrive-upload:
@@ -345,6 +347,7 @@ jobs:
           ls hardwario-macos-installer/macOS-x64/target/pkg-signed/
           mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
           pkgutil --check-signature hio-code-${{env.TAG}}-macos.pkg
+          xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username $APP_EMAIL --password $APP_SPECIFIC_PASSWORD --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
 
       - name: Publish the extension
         uses: softprops/action-gh-release@v0.1.5
