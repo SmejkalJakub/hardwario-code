@@ -358,7 +358,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
           security find-identity -v
           security find-identity -p codesigning
-          /usr/bin/codesign --deep --force --verify --timestamp --verbose --sign "0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5 "Developer ID Installer: HARDWARIO s.r.o. (C32QFQ68V9)" --options runtime ./hardwario-code
+          /usr/bin/codesign --deep --force --verify --timestamp --verbose --keychain build.keychain --sign "0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5" --options runtime ./hardwario-code
 
 
       - name: Run macOS Installer
