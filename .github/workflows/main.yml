@@ -328,7 +328,6 @@ jobs:
 
           # create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security default-keychain -s $KEYCHAIN_PATH
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
 
           # import certificate to keychain
@@ -343,9 +342,24 @@ jobs:
           security find-identity -v
           security find-identity -p codesigning
 
-          codesign --deep --force --verify --timestamp --verbose --sign "0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5 "Developer ID Installer: HARDWARIO s.r.o. (C32QFQ68V9)" --options runtime ./hardwario-code
 
       - run: security find-identity -v
+
+      - name: Codesign executable
+        env: 
+          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+        run: |
+          echo $BUILD_CERTIFICATE_BASE64 | base64 —decode > certificate.p12
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security import certificate.p12 -k build.keychain -P $P12_PASSWORD -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
+          security find-identity -v
+          security find-identity -p codesigning
+          /usr/bin/codesign --deep --force --verify --timestamp --verbose --sign "0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5 "Developer ID Installer: HARDWARIO s.r.o. (C32QFQ68V9)" --options runtime ./hardwario-code
+
 
       - name: Run macOS Installer
         run: | 
