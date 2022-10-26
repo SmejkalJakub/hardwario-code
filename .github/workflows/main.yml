@@ -341,7 +341,7 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
-          codesign --deep --force --verify --timestamp --verbose --sign 0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5 --options runtime ./hardwario-code
+          codesign --deep --force --verify --timestamp --verbose --sign "Developer ID Installer: HARDWARIO s.r.o. (C32QFQ68V9)" --options runtime ./hardwario-code
 
       - run: security find-identity -v
 
