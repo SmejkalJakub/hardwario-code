@@ -342,6 +342,8 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
+      - run: security find-identity -v -p codesigning
+
       - name: Run macOS Installer
         run: | 
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
