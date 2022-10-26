@@ -342,7 +342,7 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
-      - run: security find-identity -v -p codesigning
+      - run: security find-identity -v
 
       - name: Run macOS Installer
         run: | 
