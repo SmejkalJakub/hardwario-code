@@ -343,7 +343,7 @@ jobs:
           security find-identity -v
           security find-identity -v -p codesigning
 
-          codesign --deep --force --verify --timestamp --verbose --sign "HARDWARIO s.r.o." --options runtime ./hardwario-code
+          codesign --deep --force --verify --timestamp --verbose --sign "0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5" --options runtime ./hardwario-code
 
       - run: security find-identity -v
 
