@@ -350,8 +350,7 @@ jobs:
       - name: Run macOS Installer
         run: | 
           echo ${{env.KEYCHAIN_PATH_GLOBAL}}
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" ${{env.KEYCHAIN_PATH_GLOBAL}}
-          codesign --deep --force --verify --timestamp --verbose --sign "Developer ID Installer: hardwario" --options runtime ./hardwario-code
+          codesign --deep --force --verify --timestamp --verbose --sign "HARDWARIO s.r.o." --options runtime ./hardwario-code
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
           ls hardwario-macos-installer/macOS-x64/target/pkg-signed/
           mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
