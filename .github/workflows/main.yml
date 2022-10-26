@@ -341,6 +341,7 @@ jobs:
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
           security find-identity -v
+          security find-identity -v -p codesigning
 
           codesign --deep --force --verify --timestamp --verbose --sign "HARDWARIO s.r.o." --options runtime ./hardwario-code
 
