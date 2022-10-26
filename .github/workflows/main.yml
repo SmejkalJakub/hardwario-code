@@ -8,9 +8,9 @@ env:
   VERSION: ${GITHUB_REF##*/}
   PLAIN_VERSION: ${GITHUB_REF##*/v}
 
-  APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
-  APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
-  APPLE_PROVISION_PROFILE: ${{ secrets.APPLE_PROVISION_PROFILE }}
+  BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+  P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+  BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
   KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
   APP_SPECIFIC_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
   APP_EMAIL: ${{ secrets.APP_EMAIL }}
@@ -314,16 +314,13 @@ jobs:
         run: echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
 
       - name: Install the Apple certificate and provisioning profile
-        env:
-          BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
-          BUILD_PROVISION_PROFILE_BASE64: ${{ secrets.BUILD_PROVISION_PROFILE_BASE64 }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          echo "KEYCHAIN_PATH_GLOBAL=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
 
           # import certificate and provisioning profile from secrets
           echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
@@ -346,9 +343,12 @@ jobs:
 
       - name: Run macOS Installer
         run: | 
+          echo ${{env.KEYCHAIN_PATH_GLOBAL}}
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" ${{env.KEYCHAIN_PATH_GLOBAL}}
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
           ls hardwario-macos-installer/macOS-x64/target/pkg/
           mv hardwario-macos-installer/macOS-x64/target/pkg/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
+          codesign --deep --force --verify --timestamp --verbose --sign --keychain ${{env.KEYCHAIN_PATH_GLOBAL}} "Developer ID Installer: HARDWARIO s.r.o." --options runtime hio-code-${{env.TAG}}-macos.pkg
           pkgutil --check-signature hio-code-${{env.TAG}}-macos.pkg
           xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username $APP_EMAIL --password $APP_SPECIFIC_PASSWORD --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
 
