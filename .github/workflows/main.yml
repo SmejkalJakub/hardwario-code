@@ -345,10 +345,10 @@ jobs:
         run: | 
           echo ${{env.KEYCHAIN_PATH_GLOBAL}}
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" ${{env.KEYCHAIN_PATH_GLOBAL}}
+          codesign --deep --force --verify --timestamp --verbose --sign "Developer ID Installer: hardwario" --options runtime ./hardwario-code
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
-          ls hardwario-macos-installer/macOS-x64/target/pkg/
-          mv hardwario-macos-installer/macOS-x64/target/pkg/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
-          codesign --deep --force --verify --timestamp --verbose --sign "Developer ID Installer: HARDWARIO s.r.o. (C32QFQ68V9)" --keychain ${{env.KEYCHAIN_PATH_GLOBAL}} --options runtime hio-code-${{env.TAG}}-macos.pkg
+          ls hardwario-macos-installer/macOS-x64/target/pkg-signed/
+          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
           pkgutil --check-signature hio-code-${{env.TAG}}-macos.pkg
           xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username $APP_EMAIL --password $APP_SPECIFIC_PASSWORD --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
 
