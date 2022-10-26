@@ -313,37 +313,37 @@ jobs:
       - name: Setup env
         run: echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
 
-      - name: Install the Apple certificate and provisioning profile
-        run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-
-          echo "KEYCHAIN_PATH_GLOBAL=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
-
-          # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
-
-          # create temporary keychain
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -T /usr/bin/codesign -k $KEYCHAIN_PATH
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-
-          security find-identity -v
-          security find-identity -p codesigning
-
-
-      - run: security find-identity -v
+      #- name: Install the Apple certificate and provisioning profile
+      #  run: |
+      #    # create variables
+      #    CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+      #    PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+      #    KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+#
+      #    echo "KEYCHAIN_PATH_GLOBAL=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
+#
+      #    # import certificate and provisioning profile from secrets
+      #    echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
+      #    echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+#
+      #    # create temporary keychain
+      #    security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+      #    security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+#
+      #    # import certificate to keychain
+      #    security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -T /usr/bin/codesign -k $KEYCHAIN_PATH
+      #    security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+      #    security list-keychain -d user -s $KEYCHAIN_PATH
+#
+      #    # apply provisioning profile
+      #    mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+      #    cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+#
+      #    security find-identity -v
+      #    security find-identity -p codesigning
+#
+#
+      #- run: security find-identity -v
 
       - name: Codesign executable
         env: 
