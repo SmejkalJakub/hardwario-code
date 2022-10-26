@@ -328,29 +328,26 @@ jobs:
 
           # create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security default-keychain -s $KEYCHAIN_PATH
           security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
 
           # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -T /usr/bin/codesign -k $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
 
-      - run: security find-identity -v
+          codesign --deep --force --verify --timestamp --verbose --sign 0E484F8ABBE8FEF13ACF9CBC2F7FF7126B043BA5 --options runtime ./hardwario-code
 
-      - name: Import Code-Signing Certificates
-        uses: apple-actions/import-codesign-certs@v1
-        with: 
-          p12-file-base64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          p12-password: ${{ secrets.P12_PASSWORD }}
+      - run: security find-identity -v
 
       - name: Run macOS Installer
         run: | 
           echo ${{env.KEYCHAIN_PATH_GLOBAL}}
-          codesign --deep --force --verify --timestamp --verbose --sign "HARDWARIO s.r.o." --options runtime ./hardwario-code
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
           ls hardwario-macos-installer/macOS-x64/target/pkg-signed/
           mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg hio-code-${{env.TAG}}-macos.pkg
