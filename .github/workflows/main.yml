@@ -14,6 +14,7 @@ env:
   KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
   APP_SPECIFIC_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
   APP_EMAIL: ${{ secrets.APP_EMAIL }}
+  APPLICATION_CERTIFICATE_BASE64: ${{ secrets.APPLICATION_CERTIFICATE_BASE64 }}
 
 jobs:
 #  gdrive-upload:
@@ -350,14 +351,14 @@ jobs:
           MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
           MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
         run: |
-          security delete-keychain $RUNNER_TEMP/app-signing.keychain-db
-          security delete-keychain $RUNNER_TEMP/build.keychain
           rm ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
           echo $BUILD_CERTIFICATE_BASE64 | base64 --decode > certificate.p12
+          echo $APPLICATION_CERTIFICATE_BASE64 | base64 --decode > application.p12
           security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
           security default-keychain -s build.keychain
           security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
           security import certificate.p12 -k build.keychain -P $P12_PASSWORD -T /usr/bin/codesign
+          security import application.p12 -k build.keychain -P $P12_PASSWORD -T /usr/bin/codesign
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
           security find-identity -v
           security find-identity -p codesigning
