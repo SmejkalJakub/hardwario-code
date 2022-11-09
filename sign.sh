@@ -2,10 +2,10 @@
 
 rm -rf hardwario-macos-installer/macOS-x64/application/code-portable-data/user-data/CachedExtensionVSIXs/
 
-codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual Studio Code.app/Contents/MacOS/Electron
-codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual Studio Code.app/Contents/MacOS/Electron
-codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual Studio Code.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Electron Framework
-codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual Studio Code.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Electron Framework
+codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app/Contents/MacOS/Electron
+codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app/Contents/MacOS/Electron
+codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app/Contents/Frameworks/Electron\ Framework.framework/Versions/A/Electron\ Framework
+codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app/Contents/Frameworks/Electron\ Framework.framework/Versions/A/Electron\ Framework
 codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/code-portable-data/tower/toolchain/cmake/CMake.app/Contents/MacOS/CMake
 codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/code-portable-data/tower/toolchain/cmake/CMake.app/Contents/MacOS/CMake
 codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime hardwario-macos-installer/macOS-x64/application/code-portable-data/tower/toolchain/gcc/libexec/gcc/arm-none-eabi/11.3.1/lto1
