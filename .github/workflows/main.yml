@@ -384,16 +384,17 @@ jobs:
           security find-identity -v
           security find-identity -p codesigning
 
-#          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-#          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-#          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-#          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-#          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-#          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
       - name: Run macOS Installer
         run: | 
           echo ${{env.KEYCHAIN_PATH_GLOBAL}}
-          cd ${{ github.workspace }}/hardwario-macos-installer/macOS-x64/application/ ; find . -name "*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \; ; sudo codesign --force --verify --timestamp --verbose --deep --sign C32QFQ68V9 --options runtime Visual Studio Code.app
+          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+
+          bash sign.sh
 
           cd ${{ github.workspace }}
           echo "jsem tu"
