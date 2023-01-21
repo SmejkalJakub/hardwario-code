@@ -73,8 +73,8 @@ jobs:
         
       - name: Download Visual Studio Code and data folder
         run: |
-          curl -o Windows/hardwario-code-windows.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive" 
           gdown --folder 1XnymViTKGAubvZs3_yKOnC2SSQivujBh
+          curl -o Windows/hardwario-code-windows.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive" 
       
       - name: Unzip all downloaded files
         run: | 
@@ -157,8 +157,8 @@ jobs:
         
       - name: Download Visual Studio Code and data folder
         run: |
-          curl -o Linux/hardwario-code-linux.tar.gz --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64" 
           gdown --folder 1e3RYcO_byAFfxBGk8_H6Mn6VtRCxRSWN
+          curl -o Linux/hardwario-code-linux.tar.gz --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64" 
                 
       - name: Unzip all downloaded files
         run: | 
@@ -230,8 +230,8 @@ jobs:
         
       - name: Download Visual Studio Code and data folder
         run: |
-          curl -o macOS/hardwario-code-macos.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
           gdown --folder 1Lb6Ulpk-yXRd-UpaU8DvYJUFpf_XDkg1 
+          curl -o macOS/hardwario-code-macos.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
                 
       - name: Unzip all downloaded files
         run: | 
