@@ -131,7 +131,7 @@ jobs:
         run: mv setup/*.msi hio-code-${{env.TAG}}-windows.msi
 
       - name: Publish the extension;
-        uses: softprops/action-gh-release@v0.1.5
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -194,7 +194,7 @@ jobs:
         run: tar -czvf hio-code-${{env.TAG}}-linux.tar.gz hardwario-code/
 
       - name: Publish the extension
-        uses: softprops/action-gh-release@v0.1.5
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -316,7 +316,7 @@ jobs:
           xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
 
       - name: Publish the extension
-        uses: softprops/action-gh-release@v0.1.5
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
