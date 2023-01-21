@@ -88,7 +88,7 @@ jobs:
           call hardwario-code/bin/code.cmd --install-extension ms-vscode.cpptools
           call hardwario-code/bin/code.cmd --install-extension ms-vscode.cpptools-themes
           call hardwario-code/bin/code.cmd --install-extension twxs.cmake
-          call hardwario-code/bin/code.cmd --install-extension hardwario-tower
+          call hardwario-code/bin/code.cmd --install-extension HARDWARIO.hardwario-tower
 
       - name: Setup env
         shell: bash
