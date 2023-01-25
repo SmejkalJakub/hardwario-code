@@ -90,6 +90,8 @@ jobs:
           call hardwario-code/bin/code.cmd --install-extension ms-vscode.cpptools-themes
           call hardwario-code/bin/code.cmd --install-extension twxs.cmake
           call hardwario-code/bin/code.cmd --install-extension HARDWARIO.hardwario-tower
+          del hardwario-code/data/extensions/.init-default-profile-extensions
+          del hardwario-code/data/extensions/extensions.json
 
       - name: Setup env
         shell: bash
@@ -184,6 +186,8 @@ jobs:
           ./hardwario-code/bin/code --install-extension ms-vscode.cpptools-themes
           ./hardwario-code/bin/code --install-extension twxs.cmake
           ./hardwario-code/bin/code --install-extension HARDWARIO.hardwario-tower
+          rm -rf ./hardwario-code/data/extensions/.init-default-profile-extensions
+          rm -rf ./hardwario-code/data/extensions/extensions.json
 
       - name: Setup env
         run: |
@@ -251,6 +255,8 @@ jobs:
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools-themes
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension twxs.cmake
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
+          rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
+          rm -rf hardwario-code/code-portable-data/extensions.json
 
       - name: Prepare macOS Installer
         run: | 
