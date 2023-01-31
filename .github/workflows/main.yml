@@ -17,42 +17,42 @@ env:
   APPLICATION_CERTIFICATE_BASE64: ${{ secrets.APPLICATION_CERTIFICATE_BASE64 }}
 
 jobs:
-  gdrive-upload:
-    name: Upload all exports to Google Drive
-    needs: [windows-export, linux-export, macos-export]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
-
-      - name: Setup env
-        run: |
-          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
-          mv hardwario-code-windows/* .
-          mv hardwario-code-linux/* .
-          mv hardwario-code-macos/* .
-
-      - name: Upload to gdrive Windows
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-windows.msi"
-          folderId: ${{ secrets.folderId }}
-     
-      - name: Upload to gdrive Linux tar
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-linux.tar.gz"
-          folderId: ${{ secrets.folderId }}
-
-      - name: Upload to gdrive macOS
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-macos.pkg"
-          folderId: ${{ secrets.folderId }}
+#  gdrive-upload:
+#    name: Upload all exports to Google Drive
+#    needs: [windows-export, linux-export, macos-export]
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Download all workflow run artifacts
+#        uses: actions/download-artifact@v3
+#
+#      - name: Setup env
+#        run: |
+#          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
+#          mv hardwario-code-windows/* .
+#          mv hardwario-code-linux/* .
+#          mv hardwario-code-macos/* .
+#
+#      - name: Upload to gdrive Windows
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-windows.msi"
+#          folderId: ${{ secrets.folderId }}
+#     
+#      - name: Upload to gdrive Linux tar
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-linux.tar.gz"
+#          folderId: ${{ secrets.folderId }}
+#
+#      - name: Upload to gdrive macOS
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-macos.pkg"
+#          folderId: ${{ secrets.folderId }}
          
   windows-export:
     name: Export HARDWARIO Code Windows
@@ -71,15 +71,17 @@ jobs:
           advinst-version: '19.7'
           advinst-enable-automation: 'true'
         
-      - name: Download Visual Studio Code and data folder
+      - name: Download and unzip Visual Studio Code
         run: |
-          gdown --folder 1XnymViTKGAubvZs3_yKOnC2SSQivujBh
-          curl -o Windows/hardwario-code-windows.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive" 
-      
-      - name: Unzip all downloaded files
-        run: | 
+          curl -o Windows/hardwario-code-windows.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive"
           7z x Windows/hardwario-code-windows.zip -ohardwario-code/ -r 
-          7z x Windows/data.zip -ohardwario-code/ -r
+      
+      - name: Create data folder
+        run: |
+          export SYSTEM=Windows
+          ./createDataFolder.sh
+          mv Windows/data hardwario-code/
+        shell: bash
 
       - name: Install all extensions
         shell: cmd
@@ -145,191 +147,191 @@ jobs:
           name: hardwario-code-windows
           path: hio-code-${{env.TAG}}-windows.msi
           
-  linux-export:
-    name: Export HARDWARIO Code Linux
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          cache: 'pip'
-      - run: pip install gdown
-        
-      - name: Download Visual Studio Code and data folder
-        run: |
-          gdown --folder 1e3RYcO_byAFfxBGk8_H6Mn6VtRCxRSWN
-          curl -o Linux/hardwario-code-linux.tar.gz --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64" 
-                
-      - name: Unzip all downloaded files
-        run: | 
-          tar -xvzf Linux/hardwario-code-linux.tar.gz 
-          mv VSCode-linux-x64 hardwario-code   
-          tar -xf Linux/data.tar.xz -C hardwario-code/
-
-          chmod o+rwx hardwario-code
-          chmod +rwx hardwario-code/code
-          chmod 777 -R hardwario-code/data
-
-          cp media/hardwario-code-icon.png hardwario-code/
-          cp media/hardwario-code.desktop hardwario-code/
-
-          cp media/install.sh hardwario-code/
-          chmod +x hardwario-code/install.sh
-
-      - name: Install all extensions
-        run: |
-          ./hardwario-code/bin/code --install-extension cschlosser.doxdocgen
-          ./hardwario-code/bin/code --install-extension marus25.cortex-debug
-          ./hardwario-code/bin/code --install-extension ms-vscode.cpptools
-          ./hardwario-code/bin/code --install-extension ms-vscode.cpptools-themes
-          ./hardwario-code/bin/code --install-extension twxs.cmake
-          ./hardwario-code/bin/code --install-extension HARDWARIO.hardwario-tower
-          rm -rf ./hardwario-code/data/extensions/.init-default-profile-extensions
-          rm -rf ./hardwario-code/data/extensions/extensions.json
-
-      - name: Setup env
-        run: |
-          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
-          echo "PLAIN_TAG=${{env.PLAIN_VERSION}}" >> "$GITHUB_ENV"
-
-      - name: Zip the final product
-        run: tar -czvf hio-code-${{env.TAG}}-linux.tar.gz hardwario-code/
-
-      - name: Publish the extension
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          files: |
-            hio-code-${{env.TAG}}-linux.tar.gz
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: hardwario-code-linux
-          path: hio-code-${{env.TAG}}-linux.tar.gz
-
-  macos-export:
-    name: Export HARDWARIO Code macOS
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-          cache: 'pip'
-      - run: pip install gdown
-
-      - name: Get latest HARDWARIO Tower VSCode Extension 
-        uses: robinraju/release-downloader@v1.4
-        with:
-          repository: "hardwario/hardwario-tower-vscode-extension"
-          latest: true
-          fileName: "*.vsix"
-        
-      - run: mv *.vsix hardwario-tower.vsix
-        
-      - name: Download Visual Studio Code and data folder
-        run: |
-          gdown --folder 1Lb6Ulpk-yXRd-UpaU8DvYJUFpf_XDkg1 
-          curl -o macOS/hardwario-code-macos.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
-                
-      - name: Unzip all downloaded files
-        run: | 
-          mkdir hardwario-code
-          unzip macOS/hardwario-code-macos.zip
-          unzip macOS/data.zip -d hardwario-code/
-          xattr -dr com.apple.quarantine Visual\ Studio\ Code.app
-          mv Visual\ Studio\ Code.app hardwario-code/Visual\ Studio\ Code.app
-          chmod -R 777 hardwario-code/
-          ls hardwario-code
-
-      - name: Install all extensions
-        run: |
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension cschlosser.doxdocgen
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension marus25.cortex-debug
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools-themes
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension twxs.cmake
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
-          rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
-          rm -rf hardwario-code/code-portable-data/extensions.json
-
-      - name: Prepare macOS Installer
-        run: | 
-          git clone https://github.com/SmejkalJakub/hardwario-macos-installer.git
-          mv hardwario-code/Visual\ Studio\ Code.app hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app
-          mv hardwario-code/code-portable-data hardwario-macos-installer/macOS-x64/application/code-portable-data
-          ls hardwario-macos-installer/macOS-x64/application/
-
-      - name: Setup env
-        run: echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
-
-      - name: Install the Apple certificate and provisioning profile
-        run: |
-          # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-
-          # import certificate and provisioning profile from secrets
-          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
-
-          # create temporary keychain
-          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
-
-          # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
-          security list-keychain -d user -s $KEYCHAIN_PATH
-
-          # apply provisioning profile
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
-
-      - name: Codesign every component
-        env: 
-          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
-          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
-        run: |
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
-          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
-          echo $APPLICATION_CERTIFICATE_BASE64 | base64 --decode > application.p12
-          security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
-          security import application.p12 -k $KEYCHAIN_PATH -P $P12_PASSWORD -T /usr/bin/codesign
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
-          security find-identity -v
-          security find-identity -p codesigning
-
-          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-
-          bash sign.sh
-
-      - name: Run macOS Installer
-        run: | 
-          bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
-          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
-          xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
-
-      - name: Publish the extension
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          files: hio-code-${{env.TAG}}-macos.pkg
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: hardwario-code-macos
-          path: hio-code-${{env.TAG}}-macos.pkg
+#  linux-export:
+#    name: Export HARDWARIO Code Linux
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.9'
+#          cache: 'pip'
+#      - run: pip install gdown
+#        
+#      - name: Download Visual Studio Code and data folder
+#        run: |
+#          gdown --folder 1e3RYcO_byAFfxBGk8_H6Mn6VtRCxRSWN
+#          curl -o Linux/hardwario-code-linux.tar.gz --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64" 
+#                
+#      - name: Unzip all downloaded files
+#        run: | 
+#          tar -xvzf Linux/hardwario-code-linux.tar.gz 
+#          mv VSCode-linux-x64 hardwario-code   
+#          tar -xf Linux/data.tar.xz -C hardwario-code/
+#
+#          chmod o+rwx hardwario-code
+#          chmod +rwx hardwario-code/code
+#          chmod 777 -R hardwario-code/data
+#
+#          cp media/hardwario-code-icon.png hardwario-code/
+#          cp media/hardwario-code.desktop hardwario-code/
+#
+#          cp media/install.sh hardwario-code/
+#          chmod +x hardwario-code/install.sh
+#
+#      - name: Install all extensions
+#        run: |
+#          ./hardwario-code/bin/code --install-extension cschlosser.doxdocgen
+#          ./hardwario-code/bin/code --install-extension marus25.cortex-debug
+#          ./hardwario-code/bin/code --install-extension ms-vscode.cpptools
+#          ./hardwario-code/bin/code --install-extension ms-vscode.cpptools-themes
+#          ./hardwario-code/bin/code --install-extension twxs.cmake
+#          ./hardwario-code/bin/code --install-extension HARDWARIO.hardwario-tower
+#          rm -rf ./hardwario-code/data/extensions/.init-default-profile-extensions
+#          rm -rf ./hardwario-code/data/extensions/extensions.json
+#
+#      - name: Setup env
+#        run: |
+#          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
+#          echo "PLAIN_TAG=${{env.PLAIN_VERSION}}" >> "$GITHUB_ENV"
+#
+#      - name: Zip the final product
+#        run: tar -czvf hio-code-${{env.TAG}}-linux.tar.gz hardwario-code/
+#
+#      - name: Publish the extension
+#        uses: softprops/action-gh-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ github.token }}
+#        with:
+#          files: |
+#            hio-code-${{env.TAG}}-linux.tar.gz
+#
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: hardwario-code-linux
+#          path: hio-code-${{env.TAG}}-linux.tar.gz
+#
+#  macos-export:
+#    name: Export HARDWARIO Code macOS
+#    runs-on: macos-latest
+#
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.9'
+#          cache: 'pip'
+#      - run: pip install gdown
+#
+#      - name: Get latest HARDWARIO Tower VSCode Extension 
+#        uses: robinraju/release-downloader@v1.4
+#        with:
+#          repository: "hardwario/hardwario-tower-vscode-extension"
+#          latest: true
+#          fileName: "*.vsix"
+#        
+#      - run: mv *.vsix hardwario-tower.vsix
+#        
+#      - name: Download Visual Studio Code and data folder
+#        run: |
+#          gdown --folder 1Lb6Ulpk-yXRd-UpaU8DvYJUFpf_XDkg1 
+#          curl -o macOS/hardwario-code-macos.zip --ssl-no-revoke -LO "https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal" 
+#                
+#      - name: Unzip all downloaded files
+#        run: | 
+#          mkdir hardwario-code
+#          unzip macOS/hardwario-code-macos.zip
+#          unzip macOS/data.zip -d hardwario-code/
+#          xattr -dr com.apple.quarantine Visual\ Studio\ Code.app
+#          mv Visual\ Studio\ Code.app hardwario-code/Visual\ Studio\ Code.app
+#          chmod -R 777 hardwario-code/
+#          ls hardwario-code
+#
+#      - name: Install all extensions
+#        run: |
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension cschlosser.doxdocgen
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension marus25.cortex-debug
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools-themes
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension twxs.cmake
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
+#          rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
+#          rm -rf hardwario-code/code-portable-data/extensions.json
+#
+#      - name: Prepare macOS Installer
+#        run: | 
+#          git clone https://github.com/SmejkalJakub/hardwario-macos-installer.git
+#          mv hardwario-code/Visual\ Studio\ Code.app hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app
+#          mv hardwario-code/code-portable-data hardwario-macos-installer/macOS-x64/application/code-portable-data
+#          ls hardwario-macos-installer/macOS-x64/application/
+#
+#      - name: Setup env
+#        run: echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
+#
+#      - name: Install the Apple certificate and provisioning profile
+#        run: |
+#          # create variables
+#          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+#          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+#          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+#
+#          # import certificate and provisioning profile from secrets
+#          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
+#          echo -n "$BUILD_PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+#
+#          # create temporary keychain
+#          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+#          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+#          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+#
+#          # import certificate to keychain
+#          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+#          security list-keychain -d user -s $KEYCHAIN_PATH
+#
+#          # apply provisioning profile
+#          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+#          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+#
+#      - name: Codesign every component
+#        env: 
+#          MACOS_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE }}
+#          MACOS_CERTIFICATE_PWD: ${{ secrets.MACOS_CERTIFICATE_PWD }}
+#        run: |
+#          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+#          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+#          echo $APPLICATION_CERTIFICATE_BASE64 | base64 --decode > application.p12
+#          security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
+#          security import application.p12 -k $KEYCHAIN_PATH -P $P12_PASSWORD -T /usr/bin/codesign
+#          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN_PATH
+#          security find-identity -v
+#          security find-identity -p codesigning
+#
+#          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#
+#          bash sign.sh
+#
+#      - name: Run macOS Installer
+#        run: | 
+#          bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
+#          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
+#          xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
+#
+#      - name: Publish the extension
+#        uses: softprops/action-gh-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ github.token }}
+#        with:
+#          files: hio-code-${{env.TAG}}-macos.pkg
+#
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: hardwario-code-macos
+#          path: hio-code-${{env.TAG}}-macos.pkg
