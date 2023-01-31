@@ -3,6 +3,7 @@
 echo $SYSTEM
 
 if [ "$SYSTEM" == "Windows" ]
+then
     gdown --folder 1ghFE4mj3SH7IeimRbtV-ThPadB-HMaxI
     mv Windows/JLink_Windows_* Windows/data/tower/toolchain/jlink.exe
     mkdir Windows/data/tower/toolchain/SEGGER
