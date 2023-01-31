@@ -78,6 +78,11 @@ jobs:
       
       - name: Create data folder
         run: |
+          ls .
+          ls Windows
+          ls Windows/data
+          ls Windows/data/tower
+          ls Windows/data/tower/toolchain
           export SYSTEM=Windows
           ./createDataFolder.sh
           mv Windows/data hardwario-code/
