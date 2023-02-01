@@ -72,7 +72,7 @@ then
 
     curl -X POST -d "accept_license_agreement=accepted&non_emb_ctr=confirmed&submit=Download+software" -o ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg --ssl-no-revoke -LO "https://www.segger.com/downloads/jlink/JLink_MacOSX_universal.pkg"
     mkdir ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
-    installer -pkg ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg -target ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
+    pkgutil --expand-full ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
 
     ls ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
 
