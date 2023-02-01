@@ -17,42 +17,42 @@ env:
   APPLICATION_CERTIFICATE_BASE64: ${{ secrets.APPLICATION_CERTIFICATE_BASE64 }}
 
 jobs:
-  gdrive-upload:
-    name: Upload all exports to Google Drive
-    needs: [windows-export, linux-export, macos-export]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
-
-      - name: Setup env
-        run: |
-          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
-          mv hardwario-code-windows/* .
-          mv hardwario-code-linux/* .
-          mv hardwario-code-macos/* .
-
-      - name: Upload to gdrive Windows
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-windows.msi"
-          folderId: ${{ secrets.folderId }}
-     
-      - name: Upload to gdrive Linux tar
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-linux.tar.gz"
-          folderId: ${{ secrets.folderId }}
-
-      - name: Upload to gdrive macOS
-        uses: adityak74/google-drive-upload-git-action@main
-        with:
-          credentials: ${{ secrets.credentials }}
-          filename: "hio-code-${{env.TAG}}-macos.pkg"
-          folderId: ${{ secrets.folderId }}
+#  gdrive-upload:
+#    name: Upload all exports to Google Drive
+#    needs: [windows-export, linux-export, macos-export]
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Download all workflow run artifacts
+#        uses: actions/download-artifact@v3
+#
+#      - name: Setup env
+#        run: |
+#          echo "TAG=${{env.VERSION}}" >> "$GITHUB_ENV"
+#          mv hardwario-code-windows/* .
+#          mv hardwario-code-linux/* .
+#          mv hardwario-code-macos/* .
+#
+#      - name: Upload to gdrive Windows
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-windows.msi"
+#          folderId: ${{ secrets.folderId }}
+#     
+#      - name: Upload to gdrive Linux tar
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-linux.tar.gz"
+#          folderId: ${{ secrets.folderId }}
+#
+#      - name: Upload to gdrive macOS
+#        uses: adityak74/google-drive-upload-git-action@main
+#        with:
+#          credentials: ${{ secrets.credentials }}
+#          filename: "hio-code-${{env.TAG}}-macos.pkg"
+#          folderId: ${{ secrets.folderId }}
         
   windows-export:
     name: Export HARDWARIO Code Windows
