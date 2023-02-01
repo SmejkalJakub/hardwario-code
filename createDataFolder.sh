@@ -71,8 +71,10 @@ then
     NINJA_LINK="https://github.com/ninja-build/ninja/releases/download/v1.11.1/ninja-mac.zip"
 
     curl -X POST -d "accept_license_agreement=accepted&non_emb_ctr=confirmed&submit=Download+software" -o ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg --ssl-no-revoke -LO "https://www.segger.com/downloads/jlink/JLink_MacOSX_universal.pkg"
-    mkdir ${SYSTEM}/data/tower/toolchain/SEGGER
+    mkdir ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
     installer -pkg ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg -target ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
+
+    ls ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
 
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz --ssl-no-revoke -LO ${CMAKE_LINK}
     tar -xvzf ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz -C ${SYSTEM}/code-portable-data/tower/toolchain/
