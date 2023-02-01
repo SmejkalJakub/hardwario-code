@@ -64,7 +64,6 @@ jobs:
 #        with:
 #          python-version: '3.9'
 #          cache: 'pip'
-#      - run: pip install gdown
 #
 #      - uses: caphyon/advinst-github-action@v1.0
 #        with:
@@ -157,7 +156,6 @@ jobs:
 #        with:
 #          python-version: '3.9'
 #          cache: 'pip'
-#      - run: pip install gdown
 #        
 #      - name: Download and unzip Visual Studio Code
 #        run: |
@@ -226,7 +224,6 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip'
-      - run: pip install gdown
 
       - name: Get latest HARDWARIO Tower VSCode Extension 
         uses: robinraju/release-downloader@v1.4
