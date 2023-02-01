@@ -74,8 +74,6 @@ then
     pkgutil --expand-full ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/
     mv ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink.pkg/Payload/Applications/SEGGER/JLink_* ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink
 
-    ls ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER
-
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz --ssl-no-revoke -LO ${CMAKE_LINK}
     tar -xvzf ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz -C ${SYSTEM}/code-portable-data/tower/toolchain/
 
