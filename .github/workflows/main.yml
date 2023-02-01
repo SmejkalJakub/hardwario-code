@@ -245,6 +245,7 @@ jobs:
 
       - name: Create data folder
         run: |
+          chmod +x createDataFolder.sh
           export SYSTEM=macOS
           ./createDataFolder.sh
           mv macOS/code-portable-data hardwario-code/          
