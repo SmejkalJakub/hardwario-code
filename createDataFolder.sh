@@ -71,7 +71,6 @@ then
     NINJA_LINK="https://github.com/ninja-build/ninja/releases/download/v1.11.1/ninja-mac.zip"
 
     curl -X POST -d "accept_license_agreement=accepted&non_emb_ctr=confirmed&submit=Download+software" -o ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg --ssl-no-revoke -LO "https://www.segger.com/downloads/jlink/JLink_MacOSX_universal.pkg"
-    ls ${SYSTEM}/code-portable-data/tower/toolchain/
     pkgutil --expand-full ${SYSTEM}/code-portable-data/tower/toolchain/jlink.pkg ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/
     mv ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink.pkg/Payload/Applications/SEGGER/JLink_* ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink
 
@@ -87,9 +86,12 @@ then
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip --ssl-no-revoke -LO ${NINJA_LINK}
     7z x ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip -o${SYSTEM}/code-portable-data/tower/toolchain/ninja -r -y
 
-    #mv ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink_* ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink
     mv ${SYSTEM}/code-portable-data/tower/toolchain/cmake-* ${SYSTEM}/code-portable-data/tower/toolchain/cmake
     mv ${SYSTEM}/code-portable-data/tower/toolchain/arm-* ${SYSTEM}/code-portable-data/tower/toolchain/gcc
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/JLink.pkg
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/Resources
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/Distribution
+
 
     find ${SYSTEM}/code-portable-data/tower/toolchain/ -maxdepth 1 -type f -exec rm "{}" \;
 fi
