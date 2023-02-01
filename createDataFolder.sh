@@ -32,7 +32,7 @@ then
     mv ${SYSTEM}/data/tower/toolchain/cmake-* ${SYSTEM}/data/tower/toolchain/cmake
     mv ${SYSTEM}/data/tower/toolchain/arm-* ${SYSTEM}/data/tower/toolchain/gcc
 
-    rm ${SYSTEM}/data/tower/toolchain/*
+    #rm ${SYSTEM}/data/tower/toolchain/*
 fi
 
 if [ "$SYSTEM" == "Linux" ]
@@ -60,7 +60,7 @@ then
     mv ${SYSTEM}/data/tower/toolchain/cmake-* ${SYSTEM}/data/tower/toolchain/cmake
     mv ${SYSTEM}/data/tower/toolchain/arm-* ${SYSTEM}/data/tower/toolchain/gcc
 
-    rm ${SYSTEM}/data/tower/toolchain/*
+    #rm ${SYSTEM}/data/tower/toolchain/*
 fi
 
 if [ "$SYSTEM" == "macOS" ]
@@ -90,5 +90,5 @@ then
     mv ${SYSTEM}/code-portable-data/tower/toolchain/cmake-* ${SYSTEM}/code-portable-data/tower/toolchain/cmake
     mv ${SYSTEM}/code-portable-data/tower/toolchain/arm-* ${SYSTEM}/code-portable-data/tower/toolchain/gcc
 
-    rm ${SYSTEM}/code-portable-data/tower/toolchain/*
+    #rm ${SYSTEM}/code-portable-data/tower/toolchain/*
 fi
