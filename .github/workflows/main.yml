@@ -164,6 +164,7 @@ jobs:
       - name: Create data folder
         run: |
           export SYSTEM=Linux
+          chmod +x createDataFolder.sh
           ./createDataFolder.sh
           mv Linux/data hardwario-code/
                 
