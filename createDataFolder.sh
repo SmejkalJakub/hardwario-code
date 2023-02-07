@@ -32,7 +32,10 @@ then
     mv ${SYSTEM}/data/tower/toolchain/cmake-* ${SYSTEM}/data/tower/toolchain/cmake
     mv ${SYSTEM}/data/tower/toolchain/arm-* ${SYSTEM}/data/tower/toolchain/gcc
 
-    find ${SYSTEM}/data/tower/toolchain/ -maxdepth 1 -type f -exec rm "{}" \;
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.exe
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.zip
+    rm -rf ${SYSTEM}/data/tower/toolchain/.gitignore
+
 fi
 
 if [ "$SYSTEM" == "Linux" ]
@@ -60,7 +63,12 @@ then
     mv ${SYSTEM}/data/tower/toolchain/cmake-* ${SYSTEM}/data/tower/toolchain/cmake
     mv ${SYSTEM}/data/tower/toolchain/arm-* ${SYSTEM}/data/tower/toolchain/gcc
 
-    find ${SYSTEM}/data/tower/toolchain/ -maxdepth 1 -type f -exec rm "{}" \;
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.zip
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.tar.xz
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.tar.gz
+    rm -rf ${SYSTEM}/data/tower/toolchain/*.tgz
+    rm -rf ${SYSTEM}/data/tower/toolchain/.gitignore
+
 fi
 
 if [ "$SYSTEM" == "macOS" ]
@@ -90,6 +98,9 @@ then
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/Resources
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/SEGGER/Distribution
 
-
-    find ${SYSTEM}/code-portable-data/tower/toolchain/ -maxdepth 1 -type f -exec rm "{}" \;
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.zip
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tar.xz
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tar.gz
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tgz
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/.gitignore
 fi
