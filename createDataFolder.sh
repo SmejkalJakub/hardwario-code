@@ -90,7 +90,7 @@ then
 
     mkdir ${SYSTEM}/code-portable-data/tower/toolchain/ninja
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip --ssl-no-revoke -LO ${NINJA_LINK}
-    7z x ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip -o${SYSTEM}/code-portable-data/tower/toolchain/ninja -r -y
+    unzip ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip -d ${SYSTEM}/code-portable-data/tower/toolchain/ninja
 
     mv ${SYSTEM}/code-portable-data/tower/toolchain/cmake-* ${SYSTEM}/code-portable-data/tower/toolchain/cmake
     mv ${SYSTEM}/code-portable-data/tower/toolchain/arm-* ${SYSTEM}/code-portable-data/tower/toolchain/gcc
@@ -102,5 +102,6 @@ then
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tar.xz
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tar.gz
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.tgz
+    rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/*.pkg
     rm -rf ${SYSTEM}/code-portable-data/tower/toolchain/.gitignore
 fi
