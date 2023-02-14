@@ -259,9 +259,9 @@ jobs:
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools-themes
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension twxs.cmake
-          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
           rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
           rm -rf hardwario-code/code-portable-data/extensions.json
+#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
 
       - name: Prepare macOS Installer
         run: | 
@@ -322,19 +322,20 @@ jobs:
 
       - name: Run macOS Installer
         run: | 
-          bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
-          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
-#          xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
+          bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code v0.0.1
+          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-v0.0.1.pkg "${{ github.workspace }}/hio-code-v0.0.1-macos.pkg"
 
+#          xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
+      
       - name: Publish the extension
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          files: hio-code-${{env.TAG}}-macos.pkg
+          files: hio-code-v0.0.1-macos.pkg
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: hardwario-code-macos
-          path: hio-code-${{env.TAG}}-macos.pkg
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: hardwario-code-macos
+#          path: hio-code-v0.0.1-macos.pkg
