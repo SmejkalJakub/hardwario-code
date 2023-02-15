@@ -312,12 +312,12 @@ jobs:
           security find-identity -p codesigning
 
 
-          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
-          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -perm +111 -type f -or -type l -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "arm-*" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.so" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.dylib" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.node" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
+#          find . -name "*.o" -execdir sudo codesign --force --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime {} \;
 #          bash sign.sh
 
       - name: Run macOS Installer
