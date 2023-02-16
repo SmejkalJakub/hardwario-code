@@ -85,8 +85,8 @@ then
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz --ssl-no-revoke -LO ${CMAKE_LINK}
     tar -xvzf ${SYSTEM}/code-portable-data/tower/toolchain/cmake.tar.gz -C ${SYSTEM}/code-portable-data/tower/toolchain/
 
-    curl -o ${SYSTEM}/code-portable-data/tower/toolchain/gcc.tar.xz --ssl-no-revoke -LO ${GCC_LINK}
-    tar -xf ${SYSTEM}/code-portable-data/tower/toolchain/gcc.tar.xz -C ${SYSTEM}/code-portable-data/tower/toolchain/
+    #curl -o ${SYSTEM}/code-portable-data/tower/toolchain/gcc.tar.xz --ssl-no-revoke -LO ${GCC_LINK}
+    #tar -xf ${SYSTEM}/code-portable-data/tower/toolchain/gcc.tar.xz -C ${SYSTEM}/code-portable-data/tower/toolchain/
 
     mkdir ${SYSTEM}/code-portable-data/tower/toolchain/ninja
     curl -o ${SYSTEM}/code-portable-data/tower/toolchain/ninja.zip --ssl-no-revoke -LO ${NINJA_LINK}
