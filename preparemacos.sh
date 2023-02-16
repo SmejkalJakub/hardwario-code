@@ -22,3 +22,18 @@ ls hardwario-code
 ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
 rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
 rm -rf hardwario-code/code-portable-data/extensions.json
+
+git clone https://github.com/SmejkalJakub/hardwario-macos-installer.git
+mv hardwario-code/Visual\ Studio\ Code.app hardwario-macos-installer/macOS-x64/application/Visual\ Studio\ Code.app
+mv hardwario-code/code-portable-data hardwario-macos-installer/macOS-x64/application/code-portable-data
+ls hardwario-macos-installer/macOS-x64/application/
+
+echo "Press any key to continue"
+while [ true ] ; do
+read -t 3 -n 1
+if [ $? = 0 ] ; then
+bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code v0.0.1
+else
+echo "waiting for the keypress"
+fi
+done
