@@ -262,7 +262,7 @@ jobs:
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
           rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
           rm -rf hardwario-code/code-portable-data/extensions.json
-          mv hardwario-code/Visual\ Studio\ Code.app hardwario-code/HARDWARIO Code.app
+          mv hardwario-code/Visual\ Studio\ Code.app hardwario-code/HARDWARIO\ Code.app
           mv hardwario-code "HARDWARIO Code"
           zip -r hardwario-code.zip "HARDWARIO Code"
 
