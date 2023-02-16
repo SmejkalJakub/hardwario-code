@@ -259,9 +259,9 @@ jobs:
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension ms-vscode.cpptools-themes
           ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension twxs.cmake
+          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
           rm -rf hardwario-code/code-portable-data/.init-default-profile-extensions
           rm -rf hardwario-code/code-portable-data/extensions.json
-#          ./hardwario-code/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension HARDWARIO.hardwario-tower
 
       - name: Prepare macOS Installer
         run: | 
