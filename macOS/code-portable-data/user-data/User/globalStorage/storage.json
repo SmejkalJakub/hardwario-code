@@ -1,26 +1,29 @@
 {
-    "userDataProfilesMigration": true,
-    "profileAssociations": {
-        "workspaces": {},
-        "emptyWindows": {
-            "1676542084437": "__default__profile__"
+    "telemetry.machineId": "b422625b98b562e98f756bbabfdf511d2471580af82f17de40225e76fa934d1b",
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "windowSplash": {
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1e1e1e",
+            "editorBackground": "#1e1e1e",
+            "titleBarBackground": "#3c3c3c",
+            "activityBarBackground": "#333333",
+            "sideBarBackground": "#252526",
+            "statusBarBackground": "#007acc",
+            "statusBarNoFolderBackground": "#68217a"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 28,
+            "activityBarWidth": 48,
+            "sideBarWidth": 256,
+            "statusBarHeight": 22,
+            "windowBorder": false
         }
     },
-    "profileAssociationsMigration": true,
-    "telemetry.machineId": "7a3d81302488eaa594bdd0854d3120ec5a98506425540c71544fe963e63bf193",
-    "backupWorkspaces": {
-        "workspaces": [],
-        "folders": [],
-        "emptyWindows": [
-            {
-                "backupFolder": "1676542054084"
-            },
-            {
-                "backupFolder": "1676542084437"
-            }
-        ]
-    },
-    "windowControlHeight": 28,
     "lastKnownMenubarData": {
         "menus": {
             "File": {
@@ -53,7 +56,7 @@
                         "label": "Open Wor&&kspace from File..."
                     },
                     {
-                        "id": "submenuitem.MenubarRecentMenu",
+                        "id": "submenuitem.36",
                         "label": "Open &&Recent",
                         "submenu": {
                             "items": [
@@ -61,6 +64,91 @@
                                     "id": "workbench.action.reopenClosedEditor",
                                     "label": "&&Reopen Closed Editor",
                                     "enabled": false
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "fsPath": "/Users/hardwario/Documents/twr-skeleton-cmake",
+                                        "external": "file:///Users/hardwario/Documents/twr-skeleton-cmake",
+                                        "path": "/Users/hardwario/Documents/twr-skeleton-cmake",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/twr-skeleton-cmake"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Documents/macos-installer-builder",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/macos-installer-builder"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Documents/twr-skeleton",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/twr-skeleton"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Downloads/hardwario-tower-vscode-extension",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/hardwario-tower-vscode-extension"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Downloads/twr-skeleton",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/twr-skeleton"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Downloads/test",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/test"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Downloads",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/Users/hardwario/Downloads/code-portable-data",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/code-portable-data"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -99,35 +187,18 @@
                     },
                     {
                         "id": "workbench.action.files.save",
-                        "label": "&&Save"
+                        "label": "&&Save",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.files.saveAs",
-                        "label": "Save &&As..."
+                        "label": "Save &&As...",
+                        "enabled": false
                     },
                     {
                         "id": "saveAll",
                         "label": "Save A&&ll",
                         "enabled": false
-                    },
-                    {
-                        "id": "vscode.menubar.separator"
-                    },
-                    {
-                        "id": "submenuitem.MenubarShare",
-                        "label": "Share",
-                        "submenu": {
-                            "items": [
-                                {
-                                    "id": "workbench.profiles.actions.exportProfile",
-                                    "label": "Export Profile (Default)..."
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.importProfile",
-                                    "label": "Import Profile..."
-                                }
-                            ]
-                        }
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -141,11 +212,17 @@
                     },
                     {
                         "id": "workbench.action.files.revert",
-                        "label": "Re&&vert File"
+                        "label": "Re&&vert File",
+                        "enabled": false
                     },
                     {
                         "id": "workbench.action.closeActiveEditor",
-                        "label": "&&Close Editor"
+                        "label": "&&Close Editor",
+                        "enabled": false
+                    },
+                    {
+                        "id": "workbench.action.closeFolder",
+                        "label": "Close &&Folder"
                     },
                     {
                         "id": "workbench.action.closeWindow",
@@ -183,11 +260,13 @@
                     },
                     {
                         "id": "actions.find",
-                        "label": "&&Find"
+                        "label": "&&Find",
+                        "enabled": false
                     },
                     {
                         "id": "editor.action.startFindReplaceAction",
-                        "label": "&&Replace"
+                        "label": "&&Replace",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -198,7 +277,7 @@
                     },
                     {
                         "id": "workbench.action.replaceInFiles",
-                        "label": "Replace in Files"
+                        "label": "Replace &&in Files"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -308,7 +387,7 @@
                         "id": "vscode.menubar.separator"
                     },
                     {
-                        "id": "submenuitem.MenubarAppearanceMenu",
+                        "id": "submenuitem.24",
                         "label": "&&Appearance",
                         "submenu": {
                             "items": [
@@ -329,25 +408,27 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "&&Primary Side Bar"
+                                    "label": "Show &&Primary Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleAuxiliaryBar",
-                                    "label": "Secondary Si&&de Bar"
+                                    "label": "Show Secondary Si&&de Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
-                                    "label": "S&&tatus Bar",
+                                    "label": "Show S&&tatus Bar",
                                     "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleActivityBarVisibility",
-                                    "label": "&&Activity Bar",
+                                    "label": "Show &&Activity Bar",
                                     "checked": true
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "&&Panel"
+                                    "label": "Show &&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -357,7 +438,7 @@
                                     "label": "&&Move Primary Side Bar Right"
                                 },
                                 {
-                                    "id": "submenuitem.PanelPositionMenu",
+                                    "id": "submenuitem.34",
                                     "label": "Panel Position",
                                     "submenu": {
                                         "items": [
@@ -378,7 +459,7 @@
                                     }
                                 },
                                 {
-                                    "id": "submenuitem.PanelAlignmentMenu",
+                                    "id": "submenuitem.33",
                                     "label": "Align Panel",
                                     "submenu": {
                                         "items": [
@@ -406,29 +487,6 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "editor.action.toggleMinimap",
-                                    "label": "&&Minimap",
-                                    "checked": true
-                                },
-                                {
-                                    "id": "breadcrumbs.toggle",
-                                    "label": "&&Breadcrumbs",
-                                    "checked": true
-                                },
-                                {
-                                    "id": "editor.action.toggleRenderWhitespace",
-                                    "label": "&&Render Whitespace",
-                                    "checked": true
-                                },
-                                {
-                                    "id": "editor.action.toggleRenderControlCharacter",
-                                    "label": "Render &&Control Characters",
-                                    "checked": true
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
                                     "id": "workbench.action.zoomIn",
                                     "label": "&&Zoom In"
                                 },
@@ -444,7 +502,7 @@
                         }
                     },
                     {
-                        "id": "submenuitem.MenubarLayoutMenu",
+                        "id": "submenuitem.31",
                         "label": "Editor &&Layout",
                         "submenu": {
                             "items": [
@@ -563,11 +621,28 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap"
+                        "label": "&&Word Wrap",
+                        "enabled": false
                     },
                     {
-                        "id": "editor.action.toggleStickyScroll",
-                        "label": "&&Sticky Scroll"
+                        "id": "editor.action.toggleMinimap",
+                        "label": "Show &&Minimap",
+                        "checked": true
+                    },
+                    {
+                        "id": "breadcrumbs.toggle",
+                        "label": "Show &&Breadcrumbs",
+                        "checked": true
+                    },
+                    {
+                        "id": "editor.action.toggleRenderWhitespace",
+                        "label": "&&Render Whitespace",
+                        "checked": true
+                    },
+                    {
+                        "id": "editor.action.toggleRenderControlCharacter",
+                        "label": "Render &&Control Characters",
+                        "checked": true
                     }
                 ]
             },
@@ -585,13 +660,14 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
                     },
                     {
-                        "id": "submenuitem.MenubarSwitchEditorMenu",
+                        "id": "submenuitem.38",
                         "label": "Switch &&Editor",
                         "submenu": {
                             "items": [
@@ -640,7 +716,7 @@
                         }
                     },
                     {
-                        "id": "submenuitem.MenubarSwitchGroupMenu",
+                        "id": "submenuitem.39",
                         "label": "Switch &&Group",
                         "submenu": {
                             "items": [
@@ -842,17 +918,13 @@
                         "label": "Toggle &&Breakpoint"
                     },
                     {
-                        "id": "submenuitem.MenubarNewBreakpointMenu",
+                        "id": "submenuitem.32",
                         "label": "&&New Breakpoint",
                         "submenu": {
                             "items": [
                                 {
                                     "id": "editor.debug.action.conditionalBreakpoint",
                                     "label": "&&Conditional Breakpoint..."
-                                },
-                                {
-                                    "id": "editor.debug.action.editBreakpoint",
-                                    "label": "&&Edit Breakpoint"
                                 },
                                 {
                                     "id": "editor.debug.action.toggleInlineBreakpoint",
@@ -901,8 +973,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -958,7 +1029,7 @@
                 "items": [
                     {
                         "id": "workbench.action.openWalkthrough",
-                        "label": "Welcome"
+                        "label": "Get Started"
                     },
                     {
                         "id": "workbench.action.showCommands",
@@ -974,7 +1045,7 @@
                     },
                     {
                         "id": "update.showCurrentReleaseNotes",
-                        "label": "Show &&Release Notes"
+                        "label": "&&Release Notes"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1033,93 +1104,8 @@
             "Preferences": {
                 "items": [
                     {
-                        "id": "submenuitem.Profiles",
-                        "label": "Profiles (Default)",
-                        "submenu": {
-                            "items": [
-                                {
-                                    "id": "workbench.profiles.actions.profileEntry.__default__profile__",
-                                    "label": "Default",
-                                    "checked": true
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.showProfileContents",
-                                    "label": "Show Contents..."
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.createProfile",
-                                    "label": "Create Profile..."
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.deleteProfile",
-                                    "label": "Delete Profile...",
-                                    "enabled": false
-                                },
-                                {
-                                    "id": "vscode.menubar.separator"
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.exportProfile",
-                                    "label": "Export Profile..."
-                                },
-                                {
-                                    "id": "workbench.profiles.actions.importProfile",
-                                    "label": "Import Profile..."
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "id": "workbench.userDataSync.actions.turnOn",
-                        "label": "Turn on Settings Sync..."
-                    },
-                    {
-                        "id": "vscode.menubar.separator"
-                    },
-                    {
                         "id": "workbench.action.openSettings",
                         "label": "&&Settings"
-                    },
-                    {
-                        "id": "workbench.view.extensions",
-                        "label": "&&Extensions"
-                    },
-                    {
-                        "id": "workbench.action.openGlobalKeybindings",
-                        "label": "Keyboard Shortcuts"
-                    },
-                    {
-                        "id": "workbench.action.openSnippets",
-                        "label": "Configure User Snippets"
-                    },
-                    {
-                        "id": "submenuitem.ThemesSubMenu",
-                        "label": "&&Theme",
-                        "submenu": {
-                            "items": [
-                                {
-                                    "id": "workbench.action.selectTheme",
-                                    "label": "Color Theme"
-                                },
-                                {
-                                    "id": "workbench.action.selectIconTheme",
-                                    "label": "File Icon Theme"
-                                },
-                                {
-                                    "id": "workbench.action.selectProductIconTheme",
-                                    "label": "Product Icon Theme"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "id": "vscode.menubar.separator"
                     },
                     {
                         "id": "settings.filterByOnline",
@@ -1128,6 +1114,50 @@
                     {
                         "id": "settings.filterByTelemetry",
                         "label": "Telemetry Settings"
+                    },
+                    {
+                        "id": "workbench.view.extensions",
+                        "label": "&&Extensions"
+                    },
+                    {
+                        "id": "vscode.menubar.separator"
+                    },
+                    {
+                        "id": "workbench.action.openGlobalKeybindings",
+                        "label": "Keyboard Shortcuts"
+                    },
+                    {
+                        "id": "workbench.extensions.action.showRecommendedKeymapExtensions",
+                        "label": "&&Migrate Keyboard Shortcuts from..."
+                    },
+                    {
+                        "id": "vscode.menubar.separator"
+                    },
+                    {
+                        "id": "workbench.action.openSnippets",
+                        "label": "Configure User Snippets"
+                    },
+                    {
+                        "id": "vscode.menubar.separator"
+                    },
+                    {
+                        "id": "workbench.action.selectTheme",
+                        "label": "&&Color Theme"
+                    },
+                    {
+                        "id": "workbench.action.selectIconTheme",
+                        "label": "File &&Icon Theme"
+                    },
+                    {
+                        "id": "workbench.action.selectProductIconTheme",
+                        "label": "&&Product Icon Theme"
+                    },
+                    {
+                        "id": "vscode.menubar.separator"
+                    },
+                    {
+                        "id": "workbench.userDataSync.actions.turnOn",
+                        "label": "Turn on Settings Sync..."
                     }
                 ]
             }
@@ -1177,9 +1207,14 @@
                 "label": "Cmd+W",
                 "userSettingsLabel": "cmd+w"
             },
+            "workbench.action.closeFolder": {
+                "label": "⌘K F",
+                "isNative": false,
+                "userSettingsLabel": "cmd+k f"
+            },
             "workbench.action.closeWindow": {
-                "label": "Shift+Cmd+W",
-                "userSettingsLabel": "shift+cmd+w"
+                "label": "Cmd+W",
+                "userSettingsLabel": "cmd+w"
             },
             "undo": {
                 "label": "Cmd+Z",
@@ -1551,43 +1586,30 @@
             }
         }
     },
-    "theme": "vs-dark",
-    "themeBackground": "#1e1e1e",
-    "windowSplash": {
-        "zoomLevel": 0,
-        "baseTheme": "vs-dark",
-        "colorInfo": {
-            "foreground": "#cccccc",
-            "background": "#1e1e1e",
-            "editorBackground": "#1e1e1e",
-            "titleBarBackground": "#3c3c3c",
-            "activityBarBackground": "#333333",
-            "sideBarBackground": "#252526",
-            "statusBarBackground": "#007acc",
-            "statusBarNoFolderBackground": "#68217a"
-        },
-        "layoutInfo": {
-            "sideBarSide": "left",
-            "editorPartMinWidth": 220,
-            "titleBarHeight": 28,
-            "activityBarWidth": 48,
-            "sideBarWidth": 0,
-            "statusBarHeight": 22,
-            "windowBorder": false
-        }
-    },
-    "window.experimental.useSandbox": true,
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/Users/jakubsmejkal/Documents/hardwario-code 2/hardwario-code/code-portable-data/user-data/Backups/1676542084437",
+            "folder": "file:///Users/hardwario/Documents/twr-skeleton-cmake",
+            "backupPath": "/Users/hardwario/Documents/hardwario-code/code-portable-data/user-data/Backups/ce0ade70bc79f2421a1dd3dfbc92743d",
             "uiState": {
                 "mode": 1,
-                "x": 128,
+                "x": 85,
                 "y": 25,
-                "width": 1024,
-                "height": 708
+                "width": 1707,
+                "height": 1095
+            }
+        },
+        "lastPluginDevelopmentHostWindow": {
+            "folder": "file:///Users/hardwario/Downloads/twr-skeleton",
+            "uiState": {
+                "mode": 3,
+                "display": 69734662,
+                "width": 1707,
+                "height": 1095,
+                "x": 85,
+                "y": 25
             }
         },
         "openedWindows": []
-    }
+    },
+    "pickerWorkingDir": "/Users/hardwario/Downloads"
 }
