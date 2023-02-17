@@ -1,0 +1,990 @@
+{
+    "logFormatVersion": 1,
+    "jobId": "fd19348d-ebde-45e1-8265-7332e83ed1cb",
+    "status": "Invalid",
+    "statusSummary": "Archive contains critical validation errors",
+    "statusCode": 4000,
+    "archiveFilename": "hardwario-code-macos-v0.0.1.pkg",
+    "uploadDate": "2023-02-17T12:23:18.880Z",
+    "sha256": "466cfece58b686a2e8ed19d26585f97238c96f56ef4d8b7d3d762653f5fc37d7",
+    "ticketContents": null,
+    "issues": [
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/tower/toolchain/ninja/ninja",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/bin/cpptools-srv",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/bin/cpptools",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/bin/debugserver",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/lib/liblldb.3.8.0.dylib",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/ms-vscode.cpptools-1.14.3-darwin-x64/debugAdapters/lldb/lib/liblldb.3.8.0.dylib",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/hardwario.hardwario-tower-1.1.6/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/hardwario.hardwario-tower-1.1.6/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/hardwario.hardwario-tower-1.1.6/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/hardwario.hardwario-tower-1.1.6/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/electron.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/electron.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/electron.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/electron.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/extensions/marus25.cortex-debug-1.6.10/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/bin/cpptools-srv",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/bin/cpptools",
+        "message": "The executable requests the com.apple.security.get-task-allow entitlement.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087731",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "i386"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-launcher",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-argdumper",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/lldb-mi",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/bin/debugserver",
+        "message": "The executable does not have the hardened runtime enabled.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087724",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/lib/liblldb.3.8.0.dylib",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/ms-vscode.cpptools-1.14.3-darwin-x64/extension/debugAdapters/lldb/lib/liblldb.3.8.0.dylib",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/hardwario.hardwario-tower-1.1.6/extension/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/hardwario.hardwario-tower-1.1.6/extension/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/hardwario.hardwario-tower-1.1.6/extension/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/hardwario.hardwario-tower-1.1.6/extension/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/electron.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/electron.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-x64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/electron.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/electron.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/lzma-native/prebuilds/darwin-arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/bin/darwin-x64-103/bindings-cpp.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/bindings.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/poller.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/darwin_list.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/build/Release/obj.target/bindings/src/serialport_unix.o",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "x86_64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The binary is not signed with a valid Developer ID certificate.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087721",
+        "architecture": "arm64"
+      },
+      {
+        "severity": "error",
+        "code": null,
+        "path": "hardwario-code-macos-v0.0.1.pkg/hardwario-code.pkg Contents/Payload/tmp/hardwario-code/code-portable-data/user-data/CachedExtensionVSIXs/marus25.cortex-debug-1.6.10/extension/binary_modules/electron-18.3.5/node_modules/@serialport/bindings-cpp/prebuilds/darwin-x64+arm64/node.napi.node",
+        "message": "The signature does not include a secure timestamp.",
+        "docUrl": "https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution/resolving_common_notarization_issues#3087733",
+        "architecture": "arm64"
+      }
+    ]
+  }
+  
