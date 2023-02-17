@@ -322,7 +322,8 @@ jobs:
       - name: Run macOS Installer
         run: | 
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code v0.0.1
-          mv hardwario-macos-installer/macOS-x64/target/pkg/hardwario-code-macos-v0.0.1.pkg "${{ github.workspace }}/hio-code-v0.0.1-macos.pkg"
+          mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-v0.0.1.pkg "${{ github.workspace }}/hio-code-v0.0.1-macos.pkg"
+          codesign --force --deep --verify --timestamp --verbose --sign C32QFQ68V9 --options runtime "${{ github.workspace }}/hio-code-v0.0.1-macos.pkg"
 
           xcrun altool --notarize-app --primary-bundle-id "com.hardwario.code" --username "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --file "${{ github.workspace }}/hio-code-v0.0.1-macos.pkg"
       
