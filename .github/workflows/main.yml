@@ -318,7 +318,7 @@ jobs:
           bash hardwario-macos-installer/macOS-x64/build-macos-x64.sh hardwario-code ${{env.TAG}}
           mv hardwario-macos-installer/macOS-x64/target/pkg-signed/hardwario-code-macos-${{env.TAG}}.pkg "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg"
 
-          xcrun notarytool submit "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg" --apple-id "pavel.hubner@hardwario.com" --password "heog-mmdx-uvqo-kzxl" --team-id "C32QFQ68V9"
+          xcrun notarytool submit "${{ github.workspace }}/hio-code-${{env.TAG}}-macos.pkg" --apple-id "$APP_EMAIL" --password "$APP_SPECIFIC_PASSWORD" --team-id "C32QFQ68V9"
       
       - name: Publish the extension
         uses: softprops/action-gh-release@v1
