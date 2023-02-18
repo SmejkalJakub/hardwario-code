@@ -325,7 +325,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          files: hardwario-code.zip
+          files: hio-code-${{env.TAG}}-macos.pkg
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
