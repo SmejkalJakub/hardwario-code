@@ -349,7 +349,7 @@ jobs:
           chmod +x createDataFolder.sh
           export SYSTEM=macOS-apple-silicon
           ./createDataFolder.sh
-          mv macOS/code-portable-data hardwario-code/          
+          mv macOS-apple-silicon/code-portable-data hardwario-code/          
       
       - name: Setup the final folder
         run: | 
